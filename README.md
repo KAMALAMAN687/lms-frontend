@@ -40,3 +40,7 @@ npm run dev
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
+
+### Adding Plugins and Dependencies
+
+npm install react-router-dom axios @reduxjs/toolkit react-redux react-icons chart.js daisyui react-hot-toast @taiwindcss/line-clamp chartjs-2
