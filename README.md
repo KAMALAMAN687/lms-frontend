@@ -1,6 +1,6 @@
 # LMS Frontend
 
-#### Setup Instruction
+### Setup Instruction
 
 1. Clone the Project
 
@@ -44,3 +44,12 @@ npm run dev
 ### Adding Plugins and Dependencies
 
 npm install react-router-dom axios @reduxjs/toolkit react-redux react-icons chart.js daisyui react-hot-toast @taiwindcss/line-clamp chartjs-2
+
+
+### Configure auto-import-sort eslint
+
+1.Install Simple import sort
+
+npm i _D eslint-plugin-simple-import-sort
+
+2. 
