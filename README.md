@@ -36,3 +36,7 @@ npm run dev
     "./src/\*_/_.{js,ts,jsx,tsx}"
 
 4.  Add the tailwind directives at the top of the directives.
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
