@@ -41,6 +41,13 @@ npm run dev
     @tailwind components;
     @tailwind utilities;
 
+5.  Add the following details in the plugin property of tailwind config
+
+```
+require("daisyui"), require("@tailwindcss/line-clamp")
+
+```
+
 ### Adding Plugins and Dependencies
 
 npm install react-router-dom axios @reduxjs/toolkit react-redux react-icons chart.js daisyui react-hot-toast @taiwindcss/line-clamp chartjs-2
