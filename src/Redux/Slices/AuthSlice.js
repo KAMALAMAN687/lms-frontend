@@ -11,6 +11,7 @@ const initialState = {
 export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
   try {
     const res = axiosInstance.post("user/register", data);
+
     toast.promise(res, {
       loading: "Wait! Creating your Account",
       success: (data) => {
@@ -20,13 +21,14 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
     });
     return (await res).data;
   } catch (error) {
-    toast.error(error?.response?.data?.message);
+    toast.error(error?.res?.data?.message);
   }
 });
 
 export const login = createAsyncThunk("/auth/login", async (data) => {
   try {
     const res = axiosInstance.post("user/login", data);
+    console.log(res);
     toast.promise(res, {
       loading: "Wait! Authenticaion in Progress",
       success: (data) => {
