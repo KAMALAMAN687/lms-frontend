@@ -83,7 +83,6 @@ function Signup() {
     formData.append("confirmPassword", signupData.confirmPassword);
 
     const response = await dispatch(createAccount(formData));
-    console.log(response);
     if (response?.payload?.success) navigate("/");
 
     setSignupData({

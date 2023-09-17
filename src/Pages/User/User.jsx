@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function User() {
   const userData = useSelector((state) => state?.auth?.data);
-  const dispatch = useDispatch();
 
   return (
     <HomeLayout>
