@@ -1,10 +1,10 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../Helpers/axiosInstance";
 import toast from "react-hot-toast";
 
 const initialState = {
   key: "",
-  subscription_id: "",
+  order_id: "",
   isPaymentVerified: false,
   allPayments: {},
   finalMonths: {},
@@ -37,7 +37,6 @@ export const verifyUserPayment = createAsyncThunk(
     try {
       const response = await axiosInstance.post("/payments/verify", {
         razorpay_payment_id: data.razorpay_payment_id,
-        razorpay_subscription_id: data.razorpay_subscription_id,
         razorpay_signature: data.razorpay_signature,
       });
 
@@ -98,9 +97,9 @@ const razorpaySlice = createSlice({
         state.key = action?.payload?.key;
       })
       .addCase(purchaseCourseBundle.fulfilled, (state, action) => {
-        state.subscription_id = action?.payload?.subscription_id;
+        state.order_id = action?.payload?.order_id;
       })
-      .addCase(verifyUserPayment.fullfilled, (state, action) => {
+      .addCase(verifyUserPayment.fulfilled, (state, action) => {
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;
       })
@@ -108,7 +107,7 @@ const razorpaySlice = createSlice({
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;
       })
-      .addCase(getPaymentRecord.fullfilled, (state, action) => {
+      .addCase(getPaymentRecord.fulfilled, (state, action) => {
         state.allPayments = action?.payload?.allPayments;
         state.finalMonths = action?.payload?.finalMonths;
         state.monthlySalesRecord = action?.payload?.monthlySalesRecord;
