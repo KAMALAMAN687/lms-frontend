@@ -30,7 +30,6 @@ function Checkout() {
 
   async function handleSubscription(e) {
     e.preventDefault();
-    console.log(razorpayKey, order_id);
     if (!razorpayKey || !order_id) {
       toast.error("Something Went Wrong");
       return;
