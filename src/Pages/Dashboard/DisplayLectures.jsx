@@ -64,7 +64,10 @@ function DisplayLectures() {
             {/* right section for displaying list of lectures */}
 
             <ul className=" w-[38rem] p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
-              <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
+              <li
+                key={lectures.id}
+                className="font-semibold text-xl text-yellow-500 flex items-center justify-between"
+              >
                 <p>Lectures List</p>
                 {role === "ADMIN" && (
                   <button
