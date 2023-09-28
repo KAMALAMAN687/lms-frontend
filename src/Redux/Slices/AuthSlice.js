@@ -83,6 +83,25 @@ export const getUserData = createAsyncThunk("/user/details", async () => {
   }
 });
 
+export const changepassword = createAsyncThunk(
+  "/changepassord",
+  async (data) => {
+    try {
+      const res = axiosInstance.post("/user/changepassword", data);
+      toast.promise(res, {
+        loading: "Wait! Verification in Progress ",
+        success: (data) => {
+          return data?.data?.message;
+        },
+        error: "Failed to changing your password",
+      });
+      return (await res).data;
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,

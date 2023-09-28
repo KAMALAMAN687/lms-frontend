@@ -6,6 +6,7 @@ import {
   deleteCourseLecture,
   getCourseLectures,
 } from "../../Redux/Slices/LectureSlice";
+import { getUserData } from "../../Redux/Slices/AuthSlice";
 
 function DisplayLectures() {
   const navigate = useNavigate();
@@ -34,7 +35,6 @@ function DisplayLectures() {
         <div className="text-center text-2xl  font-semibold text-yellow-500 underline">
           Course Name : {state?.title}
         </div>
-
         {lectures && lectures.length > 0 ? (
           <div className=" flex flex-row justify-center gap-10 w-full">
             {/* Left section for playing videos and displaying course details to admin */}

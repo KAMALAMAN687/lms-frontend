@@ -27,7 +27,6 @@ function Signup() {
     }
 
     const response = await dispatch(login(loginData));
-    console.log(response);
     if (response?.payload?.success) navigate("/");
 
     setLoginData({
@@ -91,6 +90,14 @@ function Signup() {
             Do not have an Account ? .
             <Link to="/signup" className="link text-accent cursor-pointer">
               SignUp
+            </Link>
+          </p>
+          <p className="text-center ">
+            <Link
+              to="/forgotpassword"
+              className="link text-accent cursor-pointer"
+            >
+              Forgot Your Password ?
             </Link>
           </p>
         </form>
