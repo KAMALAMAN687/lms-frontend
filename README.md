@@ -1,3 +1,6 @@
+###Deployed Link
+https://cousify.netlify.app
+
 # LMS Frontend
 
 ### Setup Instruction
