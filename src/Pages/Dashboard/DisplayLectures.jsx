@@ -25,8 +25,7 @@ function DisplayLectures() {
 
   useEffect(() => {
     if (!state) navigate("/courses");
-    dispatch(getCourseLectures(state._id));
-    console.log(state);
+    dispatch(getCourseLectures(state._id)); //passes course id
   }, []);
 
   return (
@@ -85,7 +84,7 @@ function DisplayLectures() {
                   return (
                     <li
                       className=" space-y-2 p-5 bg-black rounded-md hover:bg-slate-300 transition-all ease-in-out duration-300 hover:text-black "
-                      key={lecture.id}
+                      key={idx}
                     >
                       <p
                         className=" cursor-pointer font-semibold "

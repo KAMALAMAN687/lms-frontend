@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -69,10 +69,11 @@ function CreateCourse() {
       <div className="flex items-center justify-center h-[100vh]">
         <form
           onSubmit={onFormSubmit}
+          noValidate
           className="flex flex-col justify-center gap-5 rounded-lg p-4 text-white w-[700px] my-10 shadow-[0_0_10px_black] relative"
         >
           <Link
-            to={navigate(-1)}
+            to={"/"}
             className="absolute top-8 text-2xl link text-accent cursor-pointer"
           >
             <AiOutlineArrowLeft />

@@ -17,7 +17,7 @@ function User() {
     toast.success("Cancellation Completed");
     navigate("/");
   }
-  console.log(userData);
+
   return (
     <HomeLayout>
       <div className=" min-h-[90vh] flex items-center justify-center ">
